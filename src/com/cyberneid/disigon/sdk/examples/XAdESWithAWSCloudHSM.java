@@ -38,7 +38,7 @@ public class XAdESWithAWSCloudHSM {
 		
 		try
 		{
-			// creates a new instance of DigitalSignature with the given pkcs11 module
+			// creates a new instance of P11Signer with the given pkcs11 module
 			// you may specify your own PKCS#11 dll
 			P11Signer dsign = new P11Signer(module);
 	
