@@ -45,11 +45,11 @@ public class XAdESWithAWSCloudHSM {
 			// open a new session with the HSM
 			dsign.open();
 
-			// determine how many slots are available
+			// determine how many active slots are available
 			int slotCount = dsign.getSlotsCount(true);		
 			System.out.println("slot count: " + slotCount);
 			
-			// specify the slot 0
+			// specify the slot 0. Change the index if you want to use another slot
 			dsign.setSlot(0);
 			
 			// login
@@ -59,10 +59,11 @@ public class XAdESWithAWSCloudHSM {
 			XAdESGenerator xadesGen = new XAdESGenerator();
 			xadesGen.load(input);
 			
-			// Certificate Selector for selecting the certificate with a give label
+			// Certificate Selector for selecting the certificate with a given label
+			// change the label to match your signature certificate's label
 			CertSelector certSelector = new ByLabelCertSelector("myCertificateLabel");
 			
-			// sign BES
+			// sign Xades BES
 			Document document = xadesGen.signBES(dsign,certSelector, null);
 			
 			// write to file
