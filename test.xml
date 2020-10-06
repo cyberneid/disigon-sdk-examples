@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:getStatoConsenso xmlns:ns2="http://statoConsenso.webservice.escape.com/">
+         <arg0>
+            <codiceAziendaErogatrice>9999</codiceAziendaErogatrice>
+            <codiceFiscalePaziente>RMNDNL60P27H501B</codiceFiscalePaziente>
+            <codiceRichiesta>9999</codiceRichiesta>
+         </arg0>
+      </ns2:getStatoConsenso>
+   </S:Body>
+</S:Envelope>
