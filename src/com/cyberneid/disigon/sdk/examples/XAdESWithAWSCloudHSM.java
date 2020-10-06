@@ -25,7 +25,7 @@ public class XAdESWithAWSCloudHSM {
 	public static void main(String args[])
     {
 		// the pkcs#11 module to be used 
-    	String module = "bit4xpki";//"cloudhsm_pkcs11"; // AWS CloudHSM
+		String module = "/opt/cloudhsm/lib/libcloudhsm_pkcs11.so"; // AWS CloudHSM
     	
     	// the input file
 		String input = "test.xml";
