@@ -20,8 +20,12 @@ import com.cyberneid.disigon.sdk.P11Signer;
 import com.cyberneid.disigon.sdk.QualifiedCertSelector;
 import com.cyberneid.disigon.sdk.XAdESGenerator;
 
+import a.e.i;
+
 public class XAdESWithAWSCloudHSM {
 
+	static boolean CERTIFICATE_BY_PATH = true;
+	
 	public static void main(String args[])
     {
 		// the pkcs#11 module to be used 
@@ -59,10 +63,26 @@ public class XAdESWithAWSCloudHSM {
 			XAdESGenerator xadesGen = new XAdESGenerator();
 			xadesGen.load(input);
 			
-			// Certificate Selector for selecting the certificate with a given label
-			// change the label to match your signature certificate's label
-			CertSelector certSelector = new ByLabelCertSelector("myCertificateLabel");
+			// Certificate Selector for selecting the certificate
+			CertSelector certSelector;
 			
+			if(CERTIFICATE_BY_PATH)
+			{
+				// Certificate Selector for selecting the certificate stored the file system 
+				// at the given path
+				// change the id to match your signature id key as stored in the HSM
+				// and set the path to the certificate to be used for signature
+				
+				certSelector = new AWSHSMCertSelector("private key id", "/opt/cert.der");
+			}
+			else
+			{
+				// Certificate Selector for selecting the certificate stored in the HSM 
+				// with a given label
+				// change the label to match your signature certificate's label as stored
+				// in the HSM
+				certSelector = new ByLabelCertSelector("myCertificateLabel");
+			}
 			// sign Xades BES
 			Document document = xadesGen.signBES(dsign,certSelector, null);
 			
@@ -72,7 +92,7 @@ public class XAdESWithAWSCloudHSM {
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
-		}
+		} 
     }
 	
 	private static void writeXMLToFile(Document doc, String outputPath) throws TransformerFactoryConfigurationError, TransformerException, IOException {
