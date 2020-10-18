@@ -70,16 +70,15 @@ public class XAdESWithAWSCloudHSM {
 			{
 				// Certificate Selector for selecting the certificate stored the file system 
 				// at the given path
-				// change the id to match your signature id key as stored in the HSM
-				// and set the path to the certificate to be used for signature
-				
+				// Set the id to match your signature id key as stored in the HSM
+				// and set the path to the certificate to be used for signature				
 				certSelector = new AWSHSMCertSelector("private key id", "/opt/cert.der");
 			}
 			else
 			{
 				// Certificate Selector for selecting the certificate stored in the HSM 
 				// with a given label
-				// change the label to match your signature certificate's label as stored
+				// set the label to match your signature certificate's label as stored
 				// in the HSM
 				certSelector = new ByLabelCertSelector("myCertificateLabel");
 			}
