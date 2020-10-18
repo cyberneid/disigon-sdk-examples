@@ -16,6 +16,7 @@ import org.w3c.dom.Document;
 
 import com.cyberneid.disigon.sdk.ByLabelCertSelector;
 import com.cyberneid.disigon.sdk.CertSelector;
+import com.cyberneid.disigon.sdk.Disigon;
 import com.cyberneid.disigon.sdk.P11Signer;
 import com.cyberneid.disigon.sdk.QualifiedCertSelector;
 import com.cyberneid.disigon.sdk.XAdESGenerator;
@@ -39,6 +40,8 @@ public class XAdESWithAWSCloudHSM {
 		
 		// the pin in the form of <CU_user_name>:<password>
 		String pin = "CryptoUser:CUPassword123!";
+		
+		System.out.println("DISIGON version: " + Disigon.VERSION);
 		
 		try
 		{
