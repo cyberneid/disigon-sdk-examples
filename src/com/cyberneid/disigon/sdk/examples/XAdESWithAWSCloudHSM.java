@@ -21,8 +21,6 @@ import com.cyberneid.disigon.sdk.P11Signer;
 import com.cyberneid.disigon.sdk.QualifiedCertSelector;
 import com.cyberneid.disigon.sdk.XAdESGenerator;
 
-import a.e.i;
-
 public class XAdESWithAWSCloudHSM {
 
 	static boolean CERTIFICATE_BY_PATH = true;
@@ -40,6 +38,7 @@ public class XAdESWithAWSCloudHSM {
 		
 		// the pin in the form of <CU_user_name>:<password>
 		String pin = "CryptoUser:CUPassword123!";
+		
 		
 		System.out.println("DISIGON version: " + Disigon.VERSION);
 		
