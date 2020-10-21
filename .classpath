@@ -3,7 +3,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="guice-multibindings-3.0.jar"/>
-	<classpathentry kind="lib" path="guice-3.0.jar"/>
+	<classpathentry kind="lib" path="guice-3.0.jar" sourcepath="C:/Users/ugos/.m2/repository/com/google/inject/guice/3.0/guice-3.0-sources.jar"/>
 	<classpathentry kind="lib" path="javax.inject-1.jar"/>
 	<classpathentry kind="lib" path="aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="disigon-sdk-1.0.5.jar"/>

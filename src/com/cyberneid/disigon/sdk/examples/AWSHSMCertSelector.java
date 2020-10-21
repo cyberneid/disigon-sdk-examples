@@ -51,7 +51,7 @@ public class AWSHSMCertSelector implements CertSelector {
 			
 			CertReference certinfo = new CertReference();
 			
-			 certinfo.id = privateKeyId;
+			 certinfo.id = privateKeyId.getBytes();
 	         certinfo.rawValue = bouts.toByteArray();
 	         
 	         if(((P11Session)session).isLoggedIn())
