@@ -5,7 +5,7 @@ disogon is an innovative solution for digital signature on mobile and desktop pl
 This repository contains some samples for using digison-sdk for applyng digital signature to pdf, documents and xml files
 
 ## Features
-EIDAS compliant:
+eIDAS compliant:
 - CAdES, PAdES and XAdES formats
 
 Supports:
