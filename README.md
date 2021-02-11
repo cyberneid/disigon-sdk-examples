@@ -1,8 +1,9 @@
-# disigon - digital signature turned on
+![disigon logo](https://www.disigon.com/assets/images/disigon-100x30.png) 
+# digital signature turned on
 
 disogon is an innovative solution for digital signature on mobile and desktop platforms
 
-This repository contains some samples for using digison-sdk for applyng digital signature to pdf, documents and xml files
+This repository contains some examples for using digison-sdk for applyng digital signature to pdf, documents and xml files
 
 ## Features
 eIDAS compliant:
