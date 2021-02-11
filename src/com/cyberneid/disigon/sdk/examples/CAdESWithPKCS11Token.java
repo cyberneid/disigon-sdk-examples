@@ -39,11 +39,17 @@ public class CAdESWithPKCS11Token {
 		// the output file
 		String output = "test.p7m";
 		
+		// the token pin
 		String pin = "12345678";
 		
 		System.out.println("DISIGON version: " + Disigon.VERSION);
 		
+		// set true to add the CA certificate to the p7m
 		Disigon.setAddCACertificate(true);
+		
+		// set licensee and product key
+		// contact us at https://www.cyberneid.com to get a lincese key
+		Disigon.setLicense("<licensee>", "<productkey>");
 		
 		
 		try

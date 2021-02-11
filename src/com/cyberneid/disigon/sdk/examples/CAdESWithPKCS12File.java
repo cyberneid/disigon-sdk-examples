@@ -38,12 +38,18 @@ public class CAdESWithPKCS12File {
 		// the output file
 		String output = "test.p7m";
 		
+		// the password of p12 file
 		String password = "12348765";
 		
 				
 		System.out.println("DISIGON version: " + Disigon.VERSION);
 		
+		// set true if you want to add the CA certificate to the p7m
 		Disigon.setAddCACertificate(true);
+		
+		// set licensee and product key
+		// contact us at https://www.cyberneid.com to get a lincese key
+		Disigon.setLicense("<licensee>", "<productkey>");
 		
 		
 		try

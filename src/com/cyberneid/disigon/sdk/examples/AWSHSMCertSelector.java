@@ -24,6 +24,7 @@ public class AWSHSMCertSelector implements CertSelector {
 
 	private String privateKeyId;
 	private String certificatePath;
+	
 	/**
 	 * Initializes a new instance of the ByLabelCertSelector class by specifing selection criteria.
 	 * @param label is the label of the requested certificate

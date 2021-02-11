@@ -42,6 +42,14 @@ public class XAdESWithAWSCloudHSM {
 		
 		System.out.println("DISIGON version: " + Disigon.VERSION);
 		
+		// set true if you want to add the CA certificate to the p7m
+		Disigon.setAddCACertificate(true);
+		
+		// set licensee and product key
+		// contact us at https://www.cyberneid.com to get a lincese key
+		Disigon.setLicense("<licensee>", "<productkey>");
+		
+				
 		try
 		{
 			// creates a new instance of P11Signer with the given pkcs11 module

@@ -36,12 +36,20 @@ public class XAdESWithPKCS11Token {
 		// the output file
 		String output = "test.signed.xml";
 		
-		// the pin in the form of <CU_user_name>:<password>
-		String pin = "45816666";
+		// the pin of the token
+		String pin = "12345678";
 		
 		
 		System.out.println("DISIGON version: " + Disigon.VERSION);
 		
+		// set true if you want to add the CA certificate to the p7m
+		Disigon.setAddCACertificate(true);
+		
+		// set licensee and product key
+		// contact us at https://www.cyberneid.com to get a lincese key
+		Disigon.setLicense("<licensee>", "<productkey>");
+		
+				
 		try
 		{
 			// creates a new instance of P11Signer with the given pkcs11 module
