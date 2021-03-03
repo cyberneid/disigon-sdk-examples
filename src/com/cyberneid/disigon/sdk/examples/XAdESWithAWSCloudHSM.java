@@ -21,6 +21,11 @@ import com.cyberneid.disigon.sdk.P11Signer;
 import com.cyberneid.disigon.sdk.QualifiedCertSelector;
 import com.cyberneid.disigon.sdk.XAdESGenerator;
 
+/**
+ *  @author UgoChirico
+ *  https://www.ugochirico.com
+ *  https://www.cyberneid.com
+ */
 public class XAdESWithAWSCloudHSM {
 
 	static boolean CERTIFICATE_BY_PATH = true;

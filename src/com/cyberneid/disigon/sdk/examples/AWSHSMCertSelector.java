@@ -20,6 +20,11 @@ import com.qequipe.p11.P11ObjectCollection;
 import com.qequipe.p11.P11Session;
 import com.qequipe.p11.X509Certificate;
 
+/**
+ *  @author UgoChirico
+ *  https://www.ugochirico.com
+ *  https://www.cyberneid.com
+ */
 public class AWSHSMCertSelector implements CertSelector {
 
 	private String privateKeyId;

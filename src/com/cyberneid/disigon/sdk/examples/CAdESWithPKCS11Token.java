@@ -27,6 +27,11 @@ import com.cyberneid.disigon.sdk.SimpleCertSelector;
 import com.cyberneid.disigon.sdk.util.FileUtil;
 import com.qequipe.p11.Certificate;
 
+/**
+ *  @author UgoChirico
+ *  https://www.ugochirico.com
+ *  https://www.cyberneid.com
+ */
 public class CAdESWithPKCS11Token {
 
 	static boolean CERTIFICATE_BY_PATH = true;
