@@ -1,6 +1,7 @@
 package com.cyberneid.disigon.sdk.examples;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.security.cert.X509Certificate;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -41,6 +42,14 @@ public class SignatureVerification {
 		try
 		{
 			SignatureVerifier verifier = SignatureVerifier.createSignatureVerifier(new File(input));
+			
+			// alternative 1
+//			FileInputStream fins = new FileInputStream(input)
+//			SignatureVerifier verifier = SignatureVerifier.createSignatureVerifier(fins);
+			
+			// alternative 2
+//			byte[] fileContent;
+//			SignatureVerifier verifier = SignatureVerifier.createSignatureVerifier(fileContent);
 			
 			// number of signature in the file
 			int signatureCount = verifier.getNumberOfSignatures();
