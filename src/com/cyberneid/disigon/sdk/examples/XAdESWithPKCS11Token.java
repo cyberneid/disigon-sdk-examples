@@ -19,6 +19,7 @@ import com.cyberneid.disigon.sdk.CertSelector;
 import com.cyberneid.disigon.sdk.Disigon;
 import com.cyberneid.disigon.sdk.P11Signer;
 import com.cyberneid.disigon.sdk.QualifiedCertSelector;
+import com.cyberneid.disigon.sdk.TSAClient;
 import com.cyberneid.disigon.sdk.XAdESGenerator;
 
 /**
@@ -42,7 +43,7 @@ public class XAdESWithPKCS11Token {
 		String output = "test.signed.xml";
 		
 		// the pin of the token
-		String pin = "12345678";
+		String pin = "45816666";
 		
 		
 		System.out.println("DISIGON version: " + Disigon.VERSION);
@@ -85,8 +86,10 @@ public class XAdESWithPKCS11Token {
 			// Certificate Selector for selecting the qualified certificate stored in the PKCS#11
 			certSelector = new QualifiedCertSelector();
 		
+			TSAClient tsaClient = new TSAClient("http://www.qequipe.com:8181/tsa/tsa");
+			
 			// sign Xades BES
-			Document document = xadesGen.signBES(dsign,certSelector, null);
+			Document document = xadesGen.signBES(dsign,certSelector, tsaClient);
 			
 			// write to file
 			writeXMLToFile(document, output);
