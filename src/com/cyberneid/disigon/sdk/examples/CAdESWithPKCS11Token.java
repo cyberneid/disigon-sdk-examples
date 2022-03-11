@@ -1,31 +1,14 @@
 package com.cyberneid.disigon.sdk.examples;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.TransformerFactoryConfigurationError;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
-import org.w3c.dom.Document;
-
-import com.cyberneid.disigon.sdk.CACertStore;
 import com.cyberneid.disigon.sdk.Disigon;
 import com.cyberneid.disigon.sdk.P11Signer;
-import com.cyberneid.disigon.sdk.P12Signer;
 import com.cyberneid.disigon.sdk.P7MDocument;
 import com.cyberneid.disigon.sdk.SimpleCertSelector;
 import com.cyberneid.disigon.sdk.util.FileUtil;
-import com.qequipe.p11.Certificate;
 
 /**
  *  @author UgoChirico
