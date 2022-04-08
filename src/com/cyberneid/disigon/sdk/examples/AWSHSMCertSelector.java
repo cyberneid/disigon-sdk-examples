@@ -2,7 +2,6 @@ package com.cyberneid.disigon.sdk.examples;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -12,13 +11,11 @@ import java.util.List;
 import com.cyberneid.disigon.sdk.CertReference;
 import com.cyberneid.disigon.sdk.CertSelector;
 import com.cyberneid.disigon.sdk.SignatureException;
-import com.qequipe.p11.Certificate;
-import com.qequipe.p11.P11Attribute;
-import com.qequipe.p11.P11Exception;
-import com.qequipe.p11.P11Object;
-import com.qequipe.p11.P11ObjectCollection;
-import com.qequipe.p11.P11Session;
-import com.qequipe.p11.X509Certificate;
+import com.cyberneid.jcryptoki.CryptokiAttribute;
+import com.cyberneid.jcryptoki.CryptokiException;
+import com.cyberneid.jcryptoki.CryptokiObject;
+import com.cyberneid.jcryptoki.CryptokiObjectCollection;
+import com.cyberneid.jcryptoki.Session;
 
 /**
  *  @author UgoChirico
@@ -42,7 +39,7 @@ public class AWSHSMCertSelector implements CertSelector {
 	
 
 	/* Selects the certificate based on the implemented criteria
-	 * @see P11Session
+	 * @see Session
 	 */
 	@Override
 	public CertReference select(final Object session) throws SignatureException
@@ -60,16 +57,16 @@ public class AWSHSMCertSelector implements CertSelector {
 			 certinfo.id = privateKeyId.getBytes();
 	         certinfo.rawValue = bouts.toByteArray();
 	         
-	         if(((P11Session)session).isLoggedIn())
+	         if(((Session)session).isLoggedIn())
 	         {
-	        	 ArrayList<P11Attribute> attrs = new ArrayList<P11Attribute>();
+	        	 ArrayList<CryptokiAttribute> attrs = new ArrayList<CryptokiAttribute>();
 	        	 
-				 attrs.add(new P11Attribute(P11Attribute.CKA_CLASS, P11Object.CKO_PRIVATE_KEY));				
-				 attrs.add(new P11Attribute(P11Attribute.CKA_ID, privateKeyId));
+				 attrs.add(new CryptokiAttribute(CryptokiAttribute.CKA_CLASS, CryptokiObject.CKO_PRIVATE_KEY));				
+				 attrs.add(new CryptokiAttribute(CryptokiAttribute.CKA_ID, privateKeyId));
 
-				 P11ObjectCollection objects = ((P11Session)session).getObjects();
+				 CryptokiObjectCollection objects = ((Session)session).getObjects();
 				 
-				 List<P11Object> prikeys = objects.find(attrs, 1);
+				 List<CryptokiObject> prikeys = objects.find(attrs, 1);
 
 				 if(prikeys.size() > 0)
 				 {
@@ -79,7 +76,7 @@ public class AWSHSMCertSelector implements CertSelector {
 	         
 	         return certinfo;
 		}
-		catch (P11Exception ex)
+		catch (CryptokiException ex)
 		{
 			ex.printStackTrace();
 			throw new SignatureException(ex.getCKR(), ex.getMessage());

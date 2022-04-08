@@ -20,10 +20,10 @@ public class PAdESWithPKCS11Token {
 	public static void main(String args[])
     {    	
     	// the input file
-		String input = "test.txt";
+		String input = "TestFEA.pdf";
 		
 		// the token pin
-		String pin = "12345678";
+		String pin = "11223344";
 		
 		System.out.println("DISIGON version: " + Disigon.VERSION);
 		
@@ -32,14 +32,14 @@ public class PAdESWithPKCS11Token {
 		
 		// set licensee and product key
 		// contact us at https://www.cyberneid.com to get a lincese key
-		Disigon.setLicense("<licensee>", "<productkey>");
+		Disigon.setLicense("<licensee>", "<productkey>1");
 		
 		
 		try
 		{
 			// creates a new instance of P11Signer with the given pkcs11 module
 			// you may specify your own PKCS#11 dll
-			P11Signer dsign = new P11Signer("bit4xpki");
+			P11Signer dsign = new P11Signer("/Library/bit4id/pkcs11/libbit4xpki.dylib");
 	
 			// open a new session with the HSM
 			dsign.open();

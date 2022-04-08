@@ -20,64 +20,16 @@
                 <artifactId>maven-install-plugin</artifactId>
 				<version>2.5.2</version>
                 <executions>
-                    <execution>
-                        <id>install-javaml</id>
-                        <phase>clean</phase>
-                        <configuration>
-                            <file>${project.basedir}/libs/ugosjavalib.jar</file>
-                            <repositoryLayout>default</repositoryLayout>
-                            <groupId>ugosjavalib</groupId>
-                            <artifactId>ugosjavalib</artifactId>
-                            <version>1.0.0</version>
-                            <packaging>jar</packaging>
-                            <generatePom>true</generatePom>
-                        </configuration>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>install-jp11</id>
-                        <phase>clean</phase>
-                        <configuration>
-                            <file>${project.basedir}/libs/jp110.jar</file>
-                            <repositoryLayout>default</repositoryLayout>
-                            <groupId>jp11</groupId>
-                            <artifactId>jp11</artifactId>
-                            <version>1.0.3</version>
-                            <packaging>jar</packaging>
-                            <generatePom>true</generatePom>
-                        </configuration>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>install-xades4android</id>
-                        <phase>clean</phase>
-                        <configuration>
-                            <file>${project.basedir}/libs/xades4android-1.3.7-SNAPSHOT.jar</file>
-                            <repositoryLayout>default</repositoryLayout>
-                            <groupId>xades4android</groupId>
-                            <artifactId>xades4android</artifactId>
-                            <version>1.3.7</version>
-                            <packaging>jar</packaging>
-                            <generatePom>true</generatePom>
-                        </configuration>
-                        <goals>
-                            <goal>install-file</goal>
-                        </goals>
-                    </execution>
-                   
+                    
                      <execution>
                         <id>install-disigonsdk</id>
                         <phase>clean</phase>
                         <configuration>
-                            <file>${project.basedir}/libs/disigon-sdk-1.0.22.jar</file>
+                            <file>${project.basedir}/libs/disigon-sdk-1.0.26.jar</file>
                             <repositoryLayout>default</repositoryLayout>
-                            <groupId>disigon-sdk</groupId>
+                            <groupId>com.cyberneid.disigon</groupId>
                             <artifactId>disigon-sdk</artifactId>
-                            <version>1.0.22</version>
+                            <version>1.0.26a</version>
                             <packaging>jar</packaging>
                             <generatePom>true</generatePom>
                         </configuration>
@@ -87,7 +39,7 @@
                     </execution>
                 </executions>
             </plugin>
-            
+          
     </plugins>
   </build>
   
@@ -128,31 +80,12 @@
             <version>2.2.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>ugosjavalib</groupId>
-            <artifactId>ugosjavalib</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>jp11</groupId>
-            <artifactId>jp11</artifactId>
-            <version>1.0.3</version>
-        </dependency>
-
 		<dependency>
             <groupId>com.cyberneid.disigon</groupId>
             <artifactId>disigon-sdk</artifactId>
-            <version>1.0.22</version>
+            <version>1.0.26a</version>
         </dependency>
         
-        <dependency>
-            <groupId>xades4android</groupId>
-            <artifactId>xades4android</artifactId>
-            <version>1.3.7</version>
-        </dependency>
-       
-      
         <dependency>
             <groupId>org.apache.santuario</groupId>
             <artifactId>xmlsec</artifactId>
